@@ -22,7 +22,7 @@ app.use("/category", categoryRoutes)
 app.use("/pokemon", pokemonRoutes)
 
 
-const PORT = 3001;
+const PORT = 3002;
 app.listen(PORT, (error) => {
     if (error) {
         throw error;
