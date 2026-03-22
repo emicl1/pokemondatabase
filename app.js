@@ -1,0 +1,33 @@
+
+const express = require("express");
+const indexRoutes = require("./routes/index")
+const categoryRoutes = require("./routes/category.js")
+const pokemonRoutes = require("./routes/pokemon.js")
+const {body, validationResult} = require("express-validator")
+
+const app = express();
+
+app.set('view engine', 'ejs')
+
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
+app.use(express.static('public'));
+
+//routes
+
+
+app.use("/", indexRoutes)
+app.use("/category", categoryRoutes)
+app.use("/pokemon", pokemonRoutes)
+
+
+const PORT = 3001;
+app.listen(PORT, (error) => {
+    if (error) {
+        throw error;
+    }
+    console.log(`My first Express app - listening on port ${PORT}!`);
+});
+
+
