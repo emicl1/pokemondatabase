@@ -10,12 +10,18 @@
 <body>
 <%- include("./helpers/nav.ejs") %>
 
-<%if (locals.pokemons) {%>
-<% for (let pokemon of pokemons) {%>
-   <h2><%= pokemon.name%></h2>
-   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= pokemon.image %>.png" alt="pokemon">
-<%}}%>
+<form action="/pokemon/add" method="post">
+    <label for="name">pokemon name</label>
+    <input type="text" name="name" id="name">
+    <button type="submit">submit</button>
+</form>
 
+<% if (locals.pokemons) { %>
+    <% for (let pokemon of pokemons) { %>
+        <h2><%= pokemon.name %></h2>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= pokemon.image %>.png"
+             alt="pokemon">
+<% }} %>
 
 
 

@@ -6,7 +6,7 @@ const router = express.Router()
 
 
 router.get('/', pokemonController.getAllPokemons)
-
+router.post('/add', pokemonController.addPokemon)
 
 module.exports = router;
 

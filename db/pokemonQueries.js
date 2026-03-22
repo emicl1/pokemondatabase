@@ -15,12 +15,16 @@ async function getPokemon(name){
 }
 
 
+async function addPokemon(name, id){
+    return await pool.query("INSERT INTO pokemon (name, image, trainer_id) VALUES ($1,   $2,  1)", [name, id])
+}
 
 
 
 module.exports = {
     getAllPokemons,
-    getPokemon
+    getPokemon,
+    addPokemon
 }
 
 
